@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">LedText</string>
+    <string name="left_arrow">&lt;|=</string>
+    <string name="right_arrow">==|&gt;</string>
+    <string name="stop">Detener</string>
+    <string name="resume">Reanudar</string>
+    <string name="minus"> - </string>
+    <string name="plus"> + </string>
+    <string name="text_color">Text Color</string>
+    <string name="background_color">Background Color</string>
+    <string name="start">Start</string>
+    <string name="options">Opciones</string>
+    <string name="open">Abrir</string>
+    <string name="close">Cerrar</string>
+    <string name="direction">Dirección</string>
+    <string name="size">Tamaño</string>
+    <string name="blink">Parpadear</string>
+    <string name="speed">Velocidad:</string>
+    <string name="color">Color</string>
+    <string name="backgroundColor">Color de fondo</string>
+    <string name="background">Fondo</string>
+    <string name="select_a_color">Selecciona un color</string>
+    <string name="write_a_text">Escribe un texto aquí&#8230;</string>
+    <string name="fonts">Fuentes</string>
+    <string name="zero">0</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

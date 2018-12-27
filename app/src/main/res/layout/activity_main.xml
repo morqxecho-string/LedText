@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    android:id="@+id/activity_main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_green_dark">
+
+    <RelativeLayout
+        android:id="@+id/rlMainActivity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        tools:context=".MainActivity">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"/>
+
+        <!--
+        <com.machacode.oscarmorquecho.ledtext.utils.MarqueeView
+            android:id="@+id/tvTextDisplayed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:visibility="visible"
+            android:clickable="false">
+
+            <TextView
+                android:id="@+id/scrollingtext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="holaaaaasdcasdca"
+                android:singleLine="true"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:paddingRight="25dp"
+                android:paddingLeft="25dp" />
+        </com.machacode.oscarmorquecho.ledtext.utils.MarqueeView>
+        -->
+
+        <com.machacode.oscarmorquecho.ledtext.utils.ScrollTextView
+            android:id="@+id/tvTextDisplayed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            android:ellipsize="start"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:freezesText="true"
+            android:gravity="center|start"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:textAlignment="textStart"
+            android:textColor="@color/green" />
+    </RelativeLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nv_right_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:fitsSystemWindows="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=":vvvvvvvvvvvvvvvvvvv"/>
+    </android.support.design.widget.NavigationView>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nv_left_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/direction"
+                    android:textSize="@dimen/titles"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnLeftDirection"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        android:text="@string/left_arrow"
+                        tools:ignore="ButtonStyle" />
+
+                    <Button
+                        android:id="@+id/btnStop"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.4"
+                        android:layout_height="wrap_content"
+                        android:text="@string/stop"
+                        tools:ignore="ButtonStyle" />
+
+                    <Button
+                        android:id="@+id/btnRightDirection"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.3"
+                        android:layout_height="wrap_content"
+                        android:text="@string/right_arrow"
+                        tools:ignore="ButtonStyle" />
+                </LinearLayout>
+
+                <View style="@style/Divider"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/size"
+                    android:textSize="@dimen/titles"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnMinus"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.2"
+                        android:layout_height="wrap_content"
+                        android:text="@string/minus"
+                        tools:ignore="ButtonStyle"/>
+
+                    <Button
+                        android:id="@+id/btnPlus"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.2"
+                        android:layout_height="wrap_content"
+                        android:text="@string/plus"
+                        tools:ignore="ButtonStyle"/>
+                </LinearLayout>
+
+                <View style="@style/Divider"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tvTextBlink"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/blink"
+                        android:textSize="@dimen/titles"/>
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/swtBlink"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_toEndOf="@+id/tvTextBlink"/>
+                </RelativeLayout>
+
+                <View style="@style/Divider"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/speed"
+                        android:textSize="@dimen/titles" />
+
+                    <TextView
+                        android:id="@+id/tvSpeedInNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="@dimen/titles"/>
+                </LinearLayout>
+
+                <SeekBar
+                    android:id="@+id/sbTextSpeed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:shadowColor="@color/white"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:progressDrawable="@drawable/custom_progress"
+                    android:min="50"
+                    android:max="10000"
+                    />
+
+                <View style="@style/Divider"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/color"
+                    android:textSize="@dimen/titles"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnColor"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="match_parent"
+                        android:text="@string/color" />
+
+                    <RelativeLayout
+                        android:id="@+id/rlColor"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="match_parent"
+                        android:background="@color/green">
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <View style="@style/Divider"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/background_color"
+                    android:textSize="@dimen/titles"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnBackgroundColor"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="match_parent"
+                        android:text="@string/background" />
+
+                    <RelativeLayout
+                        android:id="@+id/rlBackgroundColor"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="match_parent"
+                        android:background="@color/black">
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <View style="@style/Divider"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tvTextPoliceSiren"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/blink"
+                        android:textSize="@dimen/titles"/>
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/swtPoliceSiren"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_toEndOf="@+id/tvTextPoliceSiren"/>
+                </RelativeLayout>
+
+                <View style="@style/Divider"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fonts"
+                    android:textSize="@dimen/titles"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rvFonts"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_horizontal"
+                    android:padding="4dp" />
+            </LinearLayout>
+        </ScrollView>
+    </android.support.design.widget.NavigationView>
+</android.support.v4.widget.DrawerLayout>
