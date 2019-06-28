@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.Toolbar
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/grayOpacity"
-    android:elevation="4dp">
+    android:elevation="4dp"
+    tools:targetApi="lollipop">
 
     <EditText
         android:id="@+id/etText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/write_a_text"
-        android:inputType="textAutoComplete"
+        android:inputType="textCapCharacters"
         android:gravity="center"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textStyle="normal"
+        android:background="@null"
+        android:importantForAutofill="no"
+        tools:targetApi="o" />
 </android.support.v7.widget.Toolbar>

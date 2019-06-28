@@ -19,28 +19,6 @@
             android:id="@+id/toolbar"
             layout="@layout/toolbar"/>
 
-        <!--
-        <com.machacode.oscarmorquecho.ledtext.utils.MarqueeView
-            android:id="@+id/tvTextDisplayed"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scrollbars="none"
-            android:visibility="visible"
-            android:clickable="false">
-
-            <TextView
-                android:id="@+id/scrollingtext"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="holaaaaasdcasdca"
-                android:singleLine="true"
-                android:focusable="false"
-                android:focusableInTouchMode="false"
-                android:paddingRight="25dp"
-                android:paddingLeft="25dp" />
-        </com.machacode.oscarmorquecho.ledtext.utils.MarqueeView>
-        -->
-
         <com.machacode.oscarmorquecho.ledtext.utils.ScrollTextView
             android:id="@+id/tvTextDisplayed"
             android:layout_width="match_parent"
@@ -55,7 +33,7 @@
             android:scrollHorizontally="true"
             android:singleLine="true"
             android:textAlignment="textStart"
-            android:textColor="@color/green" />
+            android:textColor="@color/green"/>
     </RelativeLayout>
 
     <android.support.design.widget.NavigationView
@@ -65,10 +43,38 @@
         android:layout_gravity="end"
         android:fitsSystemWindows="true">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=":vvvvvvvvvvvvvvvvvvv"/>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp">
+
+                <Button
+                    android:id="@+id/btnSaveCurrentConfiguration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/save_current_configuration"
+                    android:layout_marginBottom="5dp"
+                    android:layout_alignParentTop="true"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rvSavedConfigurations"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/btnSaveCurrentConfiguration"/>
+
+                <TextView
+                    android:id="@+id/tvEmptyList"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/empty_list"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:visibility="gone"/>
+            </RelativeLayout>
+        </ScrollView>
     </android.support.design.widget.NavigationView>
 
     <android.support.design.widget.NavigationView

@@ -10,7 +10,7 @@ public class LedText{
     private int colorBackgroundColor;
     private int colorText;
     private ScrollTextView tvTextDisplayed;
-    private float STEP_TEXT_SIZE = 10;
+    private final static float STEP_TEXT_SIZE = 10;
 
     public LedText(ScrollTextView tvTextDisplayed, String text, int speed, boolean direction, int size, int colorBackgroundColor, int colorText) {
         this.tvTextDisplayed = tvTextDisplayed;
@@ -23,6 +23,8 @@ public class LedText{
 
         this.tvTextDisplayed.setText(this.text);
         this.tvTextDisplayed.setTextSize(this.size);
+        this.tvTextDisplayed.setTextColor(this.colorText);
+        this.tvTextDisplayed.setBackgroundColor(this.colorBackgroundColor);
         this.tvTextDisplayed.startScroll();
     }
 
