@@ -6,9 +6,10 @@ import android.text.TextPaint;
 import android.util.AttributeSet;
 import android.view.animation.LinearInterpolator;
 import android.widget.Scroller;
-import android.widget.TextView;
 
-public class ScrollTextView extends android.support.v7.widget.AppCompatTextView {
+import com.google.android.material.textview.MaterialTextView;
+
+public class ScrollTextView extends MaterialTextView {
 
     // scrolling feature
     private Scroller mSlr;
@@ -83,7 +84,7 @@ public class ScrollTextView extends android.support.v7.widget.AppCompatTextView 
 
         int scrollingLen = calculateScrollingLen();
         int distance = scrollingLen - (getWidth() + mXPaused);
-        int duration = (new Double(mRndDuration * distance * 1.00000 / scrollingLen)).intValue();
+        int duration = (Double.valueOf(mRndDuration * distance * 1.00000 / scrollingLen)).intValue();
 
         setVisibility(VISIBLE);
         mSlr.startScroll(mXPaused, 0, distance, 0, duration);
@@ -101,9 +102,7 @@ public class ScrollTextView extends android.support.v7.widget.AppCompatTextView 
         Rect rect = new Rect();
         String strTxt = getText().toString();
         tp.getTextBounds(strTxt, 0, strTxt.length(), rect);
-        int scrollingLen = rect.width() + getWidth();
-        rect = null;
-        return scrollingLen;
+        return rect.width() + getWidth();
     }
 
     /**

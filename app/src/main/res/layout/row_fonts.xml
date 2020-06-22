@@ -22,7 +22,7 @@
         android:layout_gravity="center_horizontal"
         android:contentDescription="@string/font" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvFullNameFont"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

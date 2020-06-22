@@ -1,5 +1,6 @@
 package com.machacode.oscarmorquecho.ledtext.utils;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Handler;
 import android.util.AttributeSet;
@@ -19,18 +20,8 @@ public class MarqueeView extends HorizontalScrollView {
     //    TimerTask timerTask = new TimerTask() {
     //    };
     //    Timer timer = new Timer();
-    private Runnable little_scroll = new Runnable() {
-        @Override
-        public void run() {
-            MarqueeView.this.smoothScrollBy(-2, 0);
-        }
-    };
-    private Runnable full_scroll = new Runnable() {
-        @Override
-        public void run() {
-            MarqueeView.this.fullScroll(HorizontalScrollView.FOCUS_RIGHT);
-        }
-    };
+    private Runnable little_scroll = () -> MarqueeView.this.smoothScrollBy(-2, 0);
+    private Runnable full_scroll = () -> MarqueeView.this.fullScroll(HorizontalScrollView.FOCUS_RIGHT);
     private Handler handler = new Handler();
     private Runnable runnable = new Runnable() {
         int wait = 0;
@@ -72,6 +63,7 @@ public class MarqueeView extends HorizontalScrollView {
     };
     boolean onLayoutExecuted = false;
 
+    @SuppressLint("RtlHardcoded")
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         super.onLayout(changed, l, t, r, b);

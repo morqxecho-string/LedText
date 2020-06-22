@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
+<com.google.android.material.card.MaterialCardView
     android:id="@+id/cvConfiguration"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    style="@style/MyCardViewStyle"
     app:cardBackgroundColor="@color/grayOpacity"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    style="@style/MyCardViewStyle">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,7 +15,7 @@
         android:orientation="horizontal"
         android:weightSum="10">
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tvName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -23,7 +23,7 @@
             android:textColor="@color/white"
             android:textSize="12sp"/>
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tvCreatedAt"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -32,4 +32,4 @@
             android:textColor="@color/white"
             android:textSize="10sp"/>
     </LinearLayout>
-</android.support.v7.widget.CardView>
+</com.google.android.material.card.MaterialCardView>

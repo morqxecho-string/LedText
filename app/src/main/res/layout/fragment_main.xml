@@ -24,6 +24,5 @@
         android:textAlignment="textStart"
         android:textColor="@color/green"
         android:text="Hooolooo"
-        android:textSize="26dp" />
-
+        android:textSize="26sp" />
 </LinearLayout>

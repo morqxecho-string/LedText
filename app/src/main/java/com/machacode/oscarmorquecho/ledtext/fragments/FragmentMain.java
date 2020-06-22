@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.graphics.Point;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,8 +11,12 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+
 import com.machacode.oscarmorquecho.ledtext.R;
 import com.machacode.oscarmorquecho.ledtext.utils.ScrollTextView;
+import com.machacode.oscarmorquecho.ledtext.utils.TextWatcherLedText;
 
 import java.util.Objects;
 
@@ -34,25 +36,24 @@ public class FragmentMain extends Fragment implements Animation.AnimationListene
         return view;
     }
 
-    public void initAll(View view){
+    private void initAll(View view){
         Activity activity = getActivity();
-        if (activity != null) {
+        if (activity != null)
             activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        }
+
         Display display = Objects.requireNonNull(activity).getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
 
         ScrollTextView tvTextDisplayed = view.findViewById(R.id.tvTextDisplayed);
 
-        Animation animBlink = AnimationUtils.loadAnimation(activity, R.anim.blink);
-
-        tvTextDisplayed.setText("Holaaaaaaaaaaaaa");
+        /*tvTextDisplayed.setText("Holaaaaaaaaaaaaa");*/
         tvTextDisplayed.setHeight((size.y / 10) * 4);
         float TEXT_SIZE = 20;
         tvTextDisplayed.setTextSize(TEXT_SIZE);
         tvTextDisplayed.startScroll();
 
+        Animation animBlink = AnimationUtils.loadAnimation(activity, R.anim.blink);
         animBlink.setAnimationListener(this);
     }
 
